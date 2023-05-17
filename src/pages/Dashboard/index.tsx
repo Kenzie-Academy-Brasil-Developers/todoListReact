@@ -48,7 +48,7 @@ export const Dashboard = () => {
     setTasks(newTasks)
   }
 
-  const closeModal = () => setIsOpenModal(!isOpenModel);
+  const toggleModal = () => setIsOpenModal(!isOpenModel);
 
   const renderBoard = (tasksToRender: Task[]) =>
     tasksToRender.map(task => (
@@ -60,7 +60,7 @@ export const Dashboard = () => {
       <Header>
         <button
           type="button"
-          onClick={closeModal}
+          onClick={toggleModal}
         >
           NEW
         </button>
@@ -70,7 +70,7 @@ export const Dashboard = () => {
         isOpenModel && (
           <ModalAddTask
             createTodo={createTodo}
-            closeModal={closeModal}
+            closeModal={toggleModal}
           />
         )
       }

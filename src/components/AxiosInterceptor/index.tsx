@@ -20,7 +20,6 @@ export const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
 
       if (error.response?.status === 401) {
         setIsOpenModal(true);
-        console.log('não autorizado')
       }
 
       return Promise.reject(error);
